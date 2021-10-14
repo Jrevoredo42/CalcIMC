@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, TextInput, TouchableHighlight } from 'react-native';
 
 
 export default function calcImc(){
@@ -7,6 +7,8 @@ export default function calcImc(){
 const [peso,setPeso]= useState(0)
 const [altura,setAltura]= useState(0)
 const [resultado,setResultado]=useState(0)
+
+//Componente Que calcula o IMC
 
 const calcImc = () => {
   if(peso==0 || !peso){
@@ -58,6 +60,10 @@ const calcImc = () => {
       <View style={estilos.block}>
           <Text>Resultado: {resultado}</Text>
       </View>
+      
+      <View>
+        <Image source= {require('./assets/tabela_imc.png')} style={estilos.photo} />
+      </View>
 
 
     </SafeAreaView>
@@ -103,5 +109,11 @@ menu:{
   backgroundColor: '#FFE74C',
 },
 
+photo: {
+  alignItems: 'center',
+  margin: 80,
+  width: '800px',
+  height: '400px',
+},
 
 });
